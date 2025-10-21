@@ -2,3 +2,4 @@ __pycache__/
 my-key-pair.pem
 *.csv
 get_log_files.py
+run_command.py
