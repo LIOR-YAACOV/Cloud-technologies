@@ -1,4 +1,5 @@
 from run_local_command import run_local_command
+import json
 
 def get_logs_info(file):
     log_dict = {"ERROR": 0, "INFO": 0, "WARN": 0}
@@ -11,7 +12,8 @@ def get_logs_info(file):
                     log_dict[severity] += 1
     timestamp = run_local_command("date +%s")[0].strip()
     log_dict["timestamp"] = timestamp
-    return log_dict
+    log_string = json.dumps(log_dict)
+    return log_string
     
 if __name__ == "__main__":
     file = "/var/log/syslog"

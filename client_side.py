@@ -27,6 +27,6 @@ if __name__ == "__main__":
     my_ssh = SshToServer(r"C:\Users\lior-\Documents\GIT\Cloud-technologies\my-key-pair.pem", "13.53.193.221", "ubuntu")
     data = run_command(my_ssh)
     if data:
-        data = data.strip().replace("'", '"')
+        # data = data.strip().replace("'", '"')
         data = json.loads(data)
         updateCsv(data, "remote_log.csv")
